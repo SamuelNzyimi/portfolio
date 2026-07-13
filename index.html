@@ -181,10 +181,10 @@
         }
     </script>
     <style>
+        .dev-short { display: none; }
         @media (max-width: 480px) {
-            .magnetic-text .relative {
-                font-size: 0.70em;
-            }
+            .dev-full { display: none; }
+            .dev-short { display: inline; }
         }
         /* Global image responsiveness */
         img {
@@ -251,7 +251,7 @@
 <div class="hero-text-container">
 <canvas id="kinetic-canvas"></canvas>
 <h2 class="font-hero-lg text-hero-lg text-primary dark:text-text-dark magnetic-text relative z-10" data-magnetic="true">
-                        Web &amp; App<br><span class="relative">Development</span></h2>
+                        Web &amp; App<br><span class="relative"><span class="dev-full">Development</span><span class="dev-short">Dev</span></span></h2>
 <h2 class="font-hero-lg text-hero-lg text-primary dark:text-text-dark opacity-20 mt-12 md:mt-16 relative z-10">
                         Product & Graphic<br>Design
                     </h2>
