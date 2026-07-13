@@ -188,16 +188,17 @@
                 max-width: 100%;
             }
 
-            /* Reduce font size only on very small screens */
-            .font-hero-lg.text-hero-lg {
-                font-size: clamp(24px, 8vw, 64px) !important;
-                line-height: 1.0 !important;
-            }
-
             .magnetic-text {
                 display: block;
                 width: 100%;
                 white-space: normal !important;
+            }
+            
+            /* Make specific words slightly smaller on mobile to prevent overflow */
+            .font-hero-lg .relative,
+            .font-headline-xl .relative {
+                font-size: 0.75em !important;
+                display: inline-block;
             }
 
             #intro-screen {
@@ -231,21 +232,15 @@
             .grid {
                 width: 100%;
             }
-
-            /* Reduce footer text only on very small screens */
-            .font-headline-xl.text-headline-xl {
-                font-size: clamp(24px, 6vw, 48px) !important;
-                line-height: 1.1 !important;
-            }
         }
-        
+
         /* Tablet and larger mobile screens - use original sizes */
         @media (min-width: 481px) and (max-width: 768px) {
             .font-hero-lg.text-hero-lg {
                 font-size: initial !important;
                 line-height: initial !important;
             }
-            
+
             .font-headline-xl.text-headline-xl {
                 font-size: initial !important;
                 line-height: initial !important;
@@ -317,8 +312,7 @@
 <div class="hero-text-container">
 <canvas id="kinetic-canvas"></canvas>
 <h2 class="font-hero-lg text-hero-lg text-primary dark:text-text-dark magnetic-text relative z-10 overflow-hidden" data-magnetic="true" style="max-width: 100vw;">
-                        Web &amp; App<br>Development
-                    </h2>
+                        Web &amp; App<br><span class="relative">Development</span></h2>
 <h2 class="font-hero-lg text-hero-lg text-primary dark:text-text-dark opacity-20 mt-12 md:mt-16 relative z-10 overflow-hidden break-words" style="max-width: 100vw;">
                         Product & Graphic<br>Design
                     </h2>
@@ -438,7 +432,7 @@
 <section class="py-section-gap px-edge-margin" id="contact">
 <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div>
-<h2 class="font-headline-xl text-headline-xl text-primary dark:text-text-dark mb-stack-lg">Let's build something precise.</h2>
+<h2 class="font-headline-xl text-headline-xl text-primary dark:text-text-dark mb-stack-lg">Let's build <span class="relative">something</span> precise.</h2>
 </div>
 <div class="flex flex-col gap-stack-lg md:items-end">
 <div class="text-left md:text-right">
