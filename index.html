@@ -181,40 +181,74 @@
         }
     </script>
     <style>
-        /* Mobile Overflow Fixes */
-        @media (max-width: 768px) {
+        /* Mobile Overflow Fixes - Only for small screens (phones) */
+        @media (max-width: 480px) {
             .hero-text-container h2 {
                 word-break: break-word;
                 max-width: 100%;
             }
+
+            /* Reduce font size only on very small screens */
+            .font-hero-lg.text-hero-lg {
+                font-size: clamp(24px, 8vw, 64px) !important;
+                line-height: 1.0 !important;
+            }
+
             .magnetic-text {
                 display: block;
                 width: 100%;
+                white-space: normal !important;
             }
+
             #intro-screen {
                 min-height: 100vh;
                 width: 100%;
             }
+
             #loader-status-row {
                 width: 100%;
             }
+
             .w-64.w-96 {
                 width: 90vw !important;
                 max-width: 280px !important;
             }
+
             [class*="px-edge-margin"] {
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
             }
+
             .section-title, .headline-xl, .body-lg, .body-md {
                 font-size: revert;
             }
+
             img {
                 max-width: 100%;
                 height: auto;
             }
+
             .grid {
                 width: 100%;
+            }
+
+            /* Reduce footer text only on very small screens */
+            .font-headline-xl.text-headline-xl {
+                font-size: clamp(24px, 6vw, 48px) !important;
+                line-height: 1.1 !important;
+            }
+        }
+        
+        /* Tablet and larger mobile screens - use original sizes */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .font-hero-lg.text-hero-lg {
+                font-size: initial !important;
+                line-height: initial !important;
+            }
+            
+            .font-headline-xl.text-headline-xl {
+                font-size: initial !important;
+                line-height: initial !important;
             }
         }
         
