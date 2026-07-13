@@ -1,0 +1,13 @@
+# Netlify Configuration for Static Site
+[build]
+  # No build command needed for static HTML
+  command = "echo 'Static site - no build required'"
+  
+  # Publish the root directory where index.html lives
+  publish = "."
+
+# Handle SPA routing (optional, remove if not needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
